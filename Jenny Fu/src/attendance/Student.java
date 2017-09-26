@@ -1,6 +1,6 @@
 package attendance;
 
-public class Student {
+public class Student implements Attendee {
 	private String firstName;
 	private String lastName;
 	private boolean present;
@@ -34,8 +34,8 @@ public class Student {
 
 		//returns true if 'first' and 'last' match this Attendee's firstName and lastName. This should NOT be case sensitive. 
 		public boolean mathces(String first, String last) {
-			if(lastName.toLowerCase().equals(last)) {
-				if(firstName.toLowerCase().equals(first))
+			if(lastName.toLowerCase().equals(last.toLowerCase())) {
+				if(firstName.toLowerCase().equals(first.toLowerCase()))
 					return true;
 				else
 					return false;
@@ -47,7 +47,7 @@ public class Student {
 		
 		//returns true if 'last' matches this Attendee's lastName. This should NOT be case sensitive.
 		public boolean matches(String last) {
-			if(lastName.toLowerCase().equals(last))
+			if(lastName.toLowerCase().equals(last.toLowerCase()))
 				return true;
 			else
 				return false;
@@ -75,9 +75,9 @@ public class Student {
 				s1 += " ";
 			}
 			if(isPresent())
-				s1 += "PRESENT";
+				s1 += "PRESENT\n";
 			else
-				s1 += "ABSENT";
+				s1 += "ABSENT\n";
 			return s1;
 		}
 }
