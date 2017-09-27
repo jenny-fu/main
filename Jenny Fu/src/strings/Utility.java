@@ -2,7 +2,6 @@ package strings;
 
 public class Utility {
 	 //private static Scanner inputSource = new Scanner(System.in);
-	  private static String a = "a";
 
 	  public static void main(String[] args){
 	    //this main method is designed to help you test your keywordIsIsolated method and noNegations method
@@ -17,6 +16,7 @@ public class Utility {
 	  }
 	  
 	  public static boolean keywordIsIsolated(int psn, String keyword, String s){
+		  String a = "a";
 		if(psn + keyword.length() == s.length())
 			return (a.compareTo(s.substring(psn - 1, psn)) > 0);
 		else if(psn == 0)
