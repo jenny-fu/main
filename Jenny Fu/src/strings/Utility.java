@@ -28,7 +28,12 @@ public class Utility {
 	  }
 	  
 	  public static boolean noNegations(String s, int psn){
-	    return true;
+	    if(psn == 0)
+	    	return true;
+	    else if(s.substring(psn - 4, psn - 1).equals("not"))
+	    	return false;
+	    else
+	    	return true;
 	  }
 	  
 	  
