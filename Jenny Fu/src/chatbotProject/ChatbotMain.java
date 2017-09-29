@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class ChatbotMain {
 	
 	public static Chatbot chatbot = new Chatbot();
+	//static is independent of instances
+	//able to access the state of the program everywhere in the program through variable
 
 	public static void main(String[] args) {
 		chatbot.startTalking();
