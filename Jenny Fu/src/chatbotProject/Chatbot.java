@@ -15,12 +15,13 @@ public class Chatbot {
 	public void startTalking() {
 		ChatbotMain.print("Welcome to our chatbot! What is your name?");
 		userName = ChatbotMain.getInput();
+		chatting = true;
 		while(chatting) {
 			ChatbotMain.print("What do you want to talk about?");
 			String response = ChatbotMain.getInput();
 			if(jenny.isTriggered(response)) {
 				chatting = false;
-				jenny.startChatting();
+				jenny.startChatting(response);
 			}
 			else
 				ChatbotMain.print("I'm sorry. I don't understand.");
