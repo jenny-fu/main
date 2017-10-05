@@ -17,9 +17,9 @@ public class UserInputTest{
 		String[] negative = {"bad", "terrible", "busy"};
 		
 		for(int i = 0; i < positive.length; i++) {
-			if(inputString.indexOf(positive[i] == -1)) {
+			if(inputString.indexOf(positive[i]) == -1) {
 				for(int j = 0; j < negative.length; j++) {
-					if(inputString.indexOf(negative[j] == -1)) {
+					if(inputString.indexOf(negative[j]) == -1) {
 						System.out.println("I dont understand. Please try again.");
 						inputString = getInput();
 					}
