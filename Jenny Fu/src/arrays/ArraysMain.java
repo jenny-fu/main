@@ -8,18 +8,95 @@ public class ArraysMain {
 	private int[] intRay;
 
 	public ArraysMain() {
-		intRay = new int[100];
-		//populate(intRay);
+		int[] randomRolls = new int[100];
+		
+		populate(randomRolls);
 		//checkOccurences(intRay, 3, 18);
-		populate1ToN(intRay);
-		shuffle(intRay);
+		//populate1ToN(intRay);
+		//shuffle(intRay);
+		//reverseOrder(intRay);
+		//frontToBack(intRay);
+		
 		//Arrays is a Utility class included in Java for formatting output
-		System.out.println(Arrays.toString(intRay));
+		//System.out.println(Arrays.toString(intRay));
+		
+		int[] result = longestConsecSeqAndPos(randomRolls);
+		System.out.println("The longest sequence of dice rolls is " + result[0]
+				+ " it happened on the " + (result[1] + 1) + "th roll. Starting with a roll of " + randomRolls[result[1]] + ".");
+	}
+	
+	
+	public int[] longestConsecSeqAndPos(int[] array) {
+		
+	}
+
+
+	//returns the length of the longest sequence of consecutive integers
+	public int longestConsecutiveSequence(int[] array) {
+		int temp = 0;
+		int count = 0;
+		for(int i = 0; i < array.length; i++) {
+			if(isConsecutive(array, i))
+				count++;
+			else{
+				if(temp < count) {
+					temp = count;
+				}
+				count = 1;
+			}
+		}
+		if(temp < count) {
+			temp = count;
+		}
+		return temp;
+	}
+	
+	public boolean isConsecutive(int[] array, int idx) {
+		if(idx == 0)
+			return true;
+		if(array[idx] == array[idx - 1] + 1)
+			return true;
+		return false;
+	}
+	
+	//moves the front to the back repeatedly, exactly n times
+	public void cycleThrough(int[] array, int n) {
+		int count = 0;
+		while(count < n) {
+			frontToBack(array);
+			count++;
+		}
+	}
+	
+	//remove the element at index zero, push every other element up by one.
+	//Put the element that was at zero at the end of the array.
+	public void frontToBack(int[] array) {
+		for(int i = 0; i < array.length - 1; i++) {
+			swap(array, i, i + 1);
+		}
+	}
+	
+	public int countLessThan(int[] array, int n) {
+		int count = 0;
+		for(int value: array) {
+			if(value < n) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public int[] reverseOrder(int[] array) {
+		int[] outArray = new int[array.length];
+		for(int i = 0; i < array.length; i++) {
+			outArray[i] = array[array.length - 1 - i];
+		}
+		return outArray;
 	}
 	
 	public void shuffle(int[] array) {
 		for(int i = 0; i < array.length; i++) {
-			swap(array, (int) (Math.random() * array.length), (int) (Math.random() * array.length))
+			swap(array, (int) (Math.random() * array.length), (int) (Math.random() * array.length));
 		}
 	}
 
