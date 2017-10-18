@@ -28,7 +28,7 @@ public class ObjectArrays {
 				people[i] = new Student(firstName, lastName, b, grade);
 			}else
 			//other 40%
-				people[i] = new Person(firstName, lastName, b);
+				people[i] = new Person(firstName, lastName, b); 
 		}
 	}
 
