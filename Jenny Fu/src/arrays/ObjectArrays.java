@@ -17,6 +17,7 @@ public class ObjectArrays {
 			String firstName = randomNameFrom(Person.FIRST_START, Person.FIRST_MIDDLE, Person.FIRST_END);
 			String lastName = randomNameFrom(Person.LAST_START, Person.LAST_MIDDLE, Person.LAST_END);
 			Borough b = randomBorough();
+			
 			/**BIG IDEA !!
 			 * In Object[] (but not primitive arrays line int[] or double[])
 			 * you can have multiple data types (subclasses of the declared type).
