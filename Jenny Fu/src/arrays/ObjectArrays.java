@@ -21,11 +21,11 @@ public class ObjectArrays {
 			 */
 			
 			if(Math.random() < 0.6) {
-				//60% of the time
+			//60% of the time
 				int grade = (int) (Math.random() * 5) + 9;
 				people[i] = new Student(firstName, lastName, b, grade);
 			}else
-				//other 40%
+			//other 40%
 				people[i] = new Person(firstName, lastName, b);
 		}
 	}
