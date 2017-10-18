@@ -19,7 +19,7 @@ public class ObjectArrays {
 			Borough b = randomBorough();
 			
 			/**BIG IDEA !!
-			 * In Object[] (but not primitive arrays line int[] or double[])
+			 * In Object[] (but not primitive arrays like int[] or double[])
 			 * you can have multiple data types (subclasses of the declared type).
 			 */
 			
