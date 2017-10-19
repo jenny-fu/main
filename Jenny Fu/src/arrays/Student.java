@@ -13,7 +13,7 @@ public class Student extends Person {
 	
 	public String toString() {
 		//If you want to call the parent method, use super.
-		return super.toString() + " I am also a " + grade + " in high school.";
+		return super.toString() + " I am also a " + grade + ".";
 	}
 
 }
