@@ -28,6 +28,71 @@ public class CaveRoom {
 		doors = new Door[4];
 		setDirections();
 	}
+	
+	//gives this room access to another room (and vice-versa) and sets a door between them, updating the directions.
+	public void setConnection(int direction, CaveRoom room, Door door) {
+		addRoom(direction, room, door);
+		room.addRoom(oppositeDirection(direction), this, door);
+	}
+	
+	public static int oppositeDirection(int direction) {
+		return (direction + 2) % 4;
+	}
+
+	public void addRoom(int direction, CaveRoom cave, Door door) {
+		borderingRooms[direction] = cave;
+		doors[direction] = door;
+		setDirections();
+	}
+	
+	public void interpretInput(String input) {
+		while(isValid(input)) {
+			System.out.println("You can only enter 'w', 'a', 's', or 'd'.");
+			input = CaveExplorer.in.nextLine();
+		}
+		String dirs = "wdsa";
+		goToRoom(dirs.indexOf(input));
+		
+			/**
+				int direction = 0;
+				String[] key = {"w", "d", "s", "a"};
+				for(int i = 0; i < key.length; i++) {
+					if(input == key[i])
+						direction = i;
+						break;
+				}
+				goToRoom(direction);
+			*/
+	}
+	
+	//This will be where your group sets up all the caves and all the connections.
+	public static void setUpCaves() {
+		
+	}
+
+	public void goToRoom(int direction) {
+		//first protect against null pointer exception
+		//(user cannot go through non-existent door)
+		if(borderingRooms[direction] != null && doors[direction] != null) {
+			CaveExplorer.currentRoom.leave();
+			CaveExplorer.currentRoom = borderingRooms[direction];
+			CaveExplorer.currentRoom.enter();
+			CaveExplorer.inventory.updateMap();
+		}
+	}
+
+	public boolean isValid(String input) {
+		String validEntries = "wdsa";
+		return (validEntries.indexOf(input) > -1) && (input.length() == 1);
+	}
+
+	public void enter() {
+		contents = "x";
+	}
+	
+	public void leave() {
+		contents = defaultContents;
+	}
 
 	public void setDirections() {
 		directions = "";
@@ -37,18 +102,21 @@ public class CaveRoom {
 				doorFound = true;
 				directions += "\n   There is a " + doors[i].getDescription() + " to " + toDirection(i) + ". " + doors[i].getDetails();
 			}
+		}
 		if(!doorFound)
-			directions += "There is no way out. Youa re trapped.";
+			directions += "There is no way out. You are trapped!";
 			
-//		int count = 0;
-//		for(int i = 0; i < doors.length; i++) {
-//			if(doors[i] == null)
-//				count++;
-//			else
-//				System.out.println("There is a " + doors[i].getDescription() + " to " + toDirection(i) + ". " + doors[i].getDetails());
-//		}
-//		if(count == 4)
-//			System.out.println("You are trapped!");
+			/**
+				int count = 0;
+				for(int i = 0; i < doors.length; i++) {
+					if(doors[i] == null)
+						count++;
+					else
+						System.out.println("There is a " + doors[i].getDescription() + " to " + toDirection(i) + ". " + doors[i].getDetails());
+				}
+				if(count == 4)
+					System.out.println("There is no way out. You are trapped!");
+			*/
 	}
 	
 	public static String toDirection(int dir) {
