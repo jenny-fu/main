@@ -11,7 +11,7 @@ public class Inventory {
 	public void updateMap() {
 		map = " ";
 		//create line across top
-		for(int i = 0; i < CaveExplorer.caves[0].length; i++) {
+		for(int i = 0; i < CaveExplorer.caves[0].length - 1; i++) {
 			map += "____"; //4 underscores
 		}
 		map += "___\n"; //3 underscores
@@ -32,7 +32,7 @@ public class Inventory {
 						text += " " + cr.getContents() + " ";
 					}else if(i == 2) {
 						if(cr.getDoor(CaveRoom.SOUTH) != null && cr.getDoor(CaveRoom.SOUTH).isOpen()) {
-							text += " ";
+							text += "   ";
 						} else {
 							text += "___";
 						}
@@ -45,7 +45,8 @@ public class Inventory {
 	}
 
 	public String getDescription() {
-		return "You have nothing in your inventory.";
+		//return "You have nothing in your inventory.";
+		return map;
 	}
 
 }
