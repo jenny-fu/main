@@ -27,7 +27,7 @@ public class Inventory {
 						text += "|";
 					}
 					if(i == 0) {
-						text += "   " //3 spaces
+						text += "   "; //3 spaces
 					}else if(i == 1) {
 						text += " " + cr.getContents() + " ";
 					}else if(i == 2) {
@@ -37,7 +37,9 @@ public class Inventory {
 							text += "___";
 						}
 					}
-				}
+				} //last cave room in row
+			text += "|";
+			map += text + "\n";
 			}
 		}
 	}
