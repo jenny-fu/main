@@ -5,12 +5,11 @@ public class Environment {
 	private int plants;
 	private int growthRate;
 
-	public Environment() {
-		// TODO Auto-generated constructor stub
+	public Environment(int plants) {
+		
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
