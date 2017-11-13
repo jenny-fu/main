@@ -2,8 +2,9 @@ package javaTheHardWay;
 
 public class Trait {
 	
-	public static final String[] traits = {"striped", "long-tailed", "furry", "brown",
-			"short-eared", "spotted", "short-tailed", "hairless", "white", "long-eared"};
+	public static final String[] traits = {
+			"striped", "long-tailed", "furry", "brown", "short-eared",
+			"spotted", "short-tailed", "hairless", "white", "long-eared"};
 	
 	private String description;
 	private int index;
