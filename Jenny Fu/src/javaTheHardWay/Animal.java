@@ -65,16 +65,20 @@ public class Animal {
 	public void increaseAge() {
 		age++;
 	}
+	
 	public void act() {
 		System.out.println(this + " is sleeping.");
 		mated = true;
 	}
+	
 	public boolean hasMated() {
 		return mated;
 	}
+	
 	public void setMated(boolean b) {
 		this.mated = b;
 	}
+	
 	public void reset() {
 		mated = false;
 	}
