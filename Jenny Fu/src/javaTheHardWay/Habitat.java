@@ -57,5 +57,6 @@ public class Habitat extends Environment {
 				animals[i] = null;
 		}
 	}
+	//overloaded methods: methods that have the same name, but different parameters
 
 }
