@@ -27,6 +27,17 @@ public class Person {
 	}
 	
 	
+	public Person(String first, String last) {
+		firstName = first;
+		lastName = last;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
 	public String getFirstName() {
 		return firstName;
 	}
