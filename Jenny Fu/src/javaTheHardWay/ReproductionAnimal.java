@@ -42,7 +42,7 @@ public class ReproductionAnimal extends RoamingAnimal {
 			if(target instanceof ReproductionAnimal && target.getDescription().equals(getDescription())
 					&& ((ReproductionAnimal)target).getSex() != getSex() && !target.hasMated()) {
 				Animal baby = getOffspring((ReproductionAnimal)target);
-				if(baby != null) { //SPECIAL NOTE: FOR CODE TO COMPLILE, YOU MUST CREATE A 'PREY' C1
+				if(baby != null) {
 					int litterSize = (int)(Math.random() * maxLitter);
 					for(int j = 0; j < litterSize; j++) {
 						habitat.addAnimal(baby);
