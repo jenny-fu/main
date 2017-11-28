@@ -71,7 +71,10 @@ public class Searching {
 			bSearch(search, start, num, target);
 		}else if(num > target) {
 			bSearch(search, num, end, target);
+		}else if(num == target) {
+			
 		}
+		return -1;
 	}
 
 	/**
