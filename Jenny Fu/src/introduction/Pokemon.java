@@ -81,7 +81,7 @@ public class Pokemon {
 		printScore(squirtle, bulbasaur); 
 		squirtle.levelUp(new Effect() {
 			
-			public void happens(Pokemon pokemon) {
+			public void happens() {
 				
 			}
 			
