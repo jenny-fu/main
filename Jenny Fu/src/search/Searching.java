@@ -64,15 +64,19 @@ public class Searching {
 		}
 		return -1;
 	}
-	
+
 	public int bSearch(int[] search, int start, int end, int target) {
-		int num = (start + end)/2;
-		if(num < target) {
-			bSearch(search, start, num, target);
-		}else if(num > target) {
-			bSearch(search, num, end, target);
-		}else if(num == target) {
-			
+		if(start > end)
+			return -1;
+		else {
+			int num = (start + end)/2;
+			if(search[num] > target) {
+				bSearch(search, start, num - 1, target);
+			}else if(search[num] < target) {
+				bSearch(search, num + 1, end, target);
+			}else if(search[num] == target) {
+				return num;
+			}
 		}
 		return -1;
 	}
