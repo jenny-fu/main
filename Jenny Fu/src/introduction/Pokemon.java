@@ -13,6 +13,11 @@ public class Pokemon {
 		hp = 100;
 		poisoned = false;
 	}
+	
+	public void levelUp(Effect e) {
+		this.level++;
+		e.happens();
+	}
 
 	public void iChooseYou() {
 		System.out.println(name + " " + name);
@@ -40,8 +45,8 @@ public class Pokemon {
 		}
 	}
 	public static void main(String[] args) {
-		Pokemon squirtle = new Pokemon("Squirtle",26);
-		Pokemon bulbasaur = new Pokemon("Bulbasaur",26);
+		Pokemon squirtle = new Pokemon("Squirtle", 26);
+		Pokemon bulbasaur = new Pokemon("Bulbasaur", 26);
 		squirtle.iChooseYou();
 		bulbasaur.iChooseYou();
 		System.out.println("Squirtle is preparing to attack with water blast.");
@@ -74,6 +79,13 @@ public class Pokemon {
 			
 		});
 		printScore(squirtle, bulbasaur); 
+		squirtle.levelUp(new Effect() {
+			
+			public void happens(Pokemon pokemon) {
+				
+			}
+			
+		});
 	}
 
 	public static void printScore(Pokemon a, Pokemon b) {
