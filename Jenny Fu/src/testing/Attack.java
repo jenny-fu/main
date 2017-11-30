@@ -1,4 +1,4 @@
-package introduction;
+package testing;
 
 public interface Attack {
 	
