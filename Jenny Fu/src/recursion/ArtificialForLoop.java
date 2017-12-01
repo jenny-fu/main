@@ -1,7 +1,5 @@
 package recursion;
 
-import testing.Action;
-
 public class ArtificialForLoop {
 
 	public static void main(String[] args) {
