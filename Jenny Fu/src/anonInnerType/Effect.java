@@ -1,4 +1,4 @@
-package testing;
+package anonInnerType;
 
 public interface Effect {
 

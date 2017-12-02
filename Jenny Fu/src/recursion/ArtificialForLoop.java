@@ -1,5 +1,7 @@
 package recursion;
 
+import anonInnerType.Action;
+
 public class ArtificialForLoop {
 
 	public static void main(String[] args) {
