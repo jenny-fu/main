@@ -4,17 +4,18 @@ package recursion;
 public class Hanoi {
 
 	public static void main(String[] args) {
-		System.out.println(count(4, "start", "help", "end"));
+		hanoi(5, "a", "b", "c");
 	}
 	
-	public static int count(int num, String start, String help, String end) {
+	public static void hanoi(int num, String start, String help, String end) {
 		if(num == 1)
-			return 1;
-		else if(num%2 == 0) {
-			return count(num - 1, start, end, help);
+			System.out.println(start + " to " + end);
+		else {
+			hanoi(num - 1, start, end, help);
+			System.out.println(start + " to " + end);
+			hanoi(num - 1, help, start, end);
+			
 		}
-		else
-			return count(num - 1, start, help, end);
 	}
 
 	//HOMEWORK:

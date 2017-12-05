@@ -3,10 +3,10 @@ package recursion;
 public class Fibonacci {
 
 	public static void main(String[] args) {
-		System.out.println();
+		System.out.println(fib(3));
 	}
 	
-	public int fib(int index) {
+	public static int fib(int index) {
 		if(index == 0 || index == 1)
 			return 1;
 		else {
