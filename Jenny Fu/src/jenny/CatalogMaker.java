@@ -62,7 +62,7 @@ public class CatalogMaker {
 	}
 
 	public int getIntegerInput() {
-		String text = in.nextLine();
+		//String text = in.nextLine();
 		int value = 0;
 		boolean valid = false;
 		while(!valid){
