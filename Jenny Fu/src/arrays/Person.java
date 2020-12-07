@@ -1,6 +1,6 @@
 package arrays;
 
-public class Person {
+public class Person { 
 
 	public static final String[] FIRST_START = {"Chr", "M", "L", "Gr", "Ph", "Th"};
 	public static final String[] FIRST_MIDDLE = {"isti", "icha", "era", "eta", "ala", "ina", "ara"};
